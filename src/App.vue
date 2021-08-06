@@ -1,29 +1,12 @@
 <template>
-  <div class="container">
-    <Human /><!--3. 普通のHTMLタグのようにHumanコンポーネントを書く-->
-    <Human />
-    <Human />
-    <Human />
-    <Human />
-    <Human />
-    <Human />
+  <div class="app">
+    <simple-memo />
   </div>
 </template>
 
-
 <script>
-import Human from "@/components/Human.vue"; //1. HumanコンポーネントをHuman.vueから読み込む
-
-// @はsrcディレクトリを指すよ！（絶対パス）
+import SimpleMemo from "./components/SimpleMemo.vue";
 export default {
-  components: {
-    Human, //2. HumanコンポーネントをApp.vueのなかで使えるように登録する
-  },
+  components: { SimpleMemo },
 };
 </script>
-
-<style scoped>
-.container {
-  display: flex;
-}
-</style>
