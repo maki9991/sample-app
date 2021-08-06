@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <Human /><!--3. 普通のHTMLタグのようにHumanコンポーネントを書く-->
+    <Human />
+    <Human />
+    <Human />
+    <Human />
+    <Human />
+    <Human />
   </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
 
+<script>
+import Human from "@/components/Human.vue"; //1. HumanコンポーネントをHuman.vueから読み込む
+
+// @はsrcディレクトリを指すよ！（絶対パス）
 export default {
-  name: "App",
   components: {
-    HelloWorld,
+    Human, //2. HumanコンポーネントをApp.vueのなかで使えるように登録する
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.container {
+  display: flex;
 }
 </style>
