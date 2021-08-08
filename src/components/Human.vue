@@ -1,12 +1,15 @@
 <template>
-  <div class="human">
+  <div class="Human">
     <div class="atama">
       <div v-if="isLaughing">🤣</div>
       <div v-else>😊</div>
     </div>
     <div class="karada" v-on:click="makeLaugh">
-      <div>💪👕💪</div>
+      <div>💪</div>
+      <div><slot /></div>
+      <div>💪</div>
     </div>
+
     <div class="ashi">
       <div>🦵🦵</div>
     </div>
@@ -15,11 +18,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isLaughing: false,
-    };
+  props: {
+    clothes: { type: String, default: "👚" },
   },
+
   methods: {
     makeLaugh() {
       this.isLaughing = true;
@@ -29,9 +31,16 @@ export default {
 </script>
 
 <style>
-.human {
+.Human {
   width: 10rem;
   font-size: 3rem;
   text-align: center;
+}
+.karada {
+  display: flex;
+}
+.container {
+  display: flex;
+  font-size: 4rem;
 }
 </style>
